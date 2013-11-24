@@ -27,7 +27,7 @@ class weather:
         self.request_uri = 'http://api.openweathermap.org/data/%s/weather?mode=%s&lang=%s&units=%s' % (self.version, self.mode, self.lang, self.units)
 
     def by_city(self, q):
-				# Current weather.
+	# Current weather.
         # RSVPs using city name, then return the JSON-array.
         self.page = urllib.request.urlopen('%s&q=%s' % (self.request_uri, q)).read().decode('utf-8')
         if self.mode == 'json': self.value = json.loads(self.page)
@@ -35,7 +35,7 @@ class weather:
         return self.value
 
     def by_coordinats(self, lat, lon):
-				# Current weather.
+	# Current weather.
         # RSVPs using geographic coordinats, then return the JSON-array.
         self.page = urllib.request.urlopen('%s&lon=%s&lat=%s' % (self.request_uri, lon, lat)).read().decode('utf-8')
         if self.mode == 'json': self.value = json.loads(self.page)
@@ -43,7 +43,7 @@ class weather:
         return self.value
 
     def by_identifier(self, id):
-				# Current weather.
+        # Current weather.
         # RSVPs using city ID, then return the JSON-array.
         self.page = urllib.request.urlopen('%s&id=%s' % (self.request_uri, id)).read().decode('utf-8')
         if self.mode == 'json': self.value = json.loads(self.page)
@@ -82,7 +82,7 @@ class forecast:
         self.request_uri_daily = 'http://api.openweathermap.org/data/%s/forecast/daily?mode=%s&lang=%s&units=%s' % (self.version, self.mode, self.lang, self.units)
 
     def by_city(self, q):
-				# Forecast every 3 hours.
+	# Forecast every 3 hours.
         # RSVPs using city name, then return the JSON-array.
         self.page = urllib.request.urlopen('%s&q=%s' % (self.request_uri, q)).read().decode('utf-8')
         if self.mode == 'json': self.value = json.loads(self.page)
@@ -90,7 +90,7 @@ class forecast:
         return self.value
 
     def by_coordinats(self, lat, lon):
-				# Forecast every 3 hours.
+	# Forecast every 3 hours.
         # RSVPs using geographic coordinats, then return the JSON-array.
         self.page = urllib.request.urlopen('%s&lon=%s&lat=%s' % (self.request_uri, lon, lat)).read().decode('utf-8')
         if self.mode == 'json': self.value = json.loads(self.page)
@@ -98,7 +98,7 @@ class forecast:
         return self.value
 
     def by_identifier(self, id):
-				# Forecast every 3 hours.
+        # Forecast every 3 hours.
         # RSVPs using city ID, then return the JSON-array.
         self.page = urllib.request.urlopen('%s&id=%s' % (self.request_uri, id)).read().decode('utf-8')
         if self.mode == 'json': self.value = json.loads(self.page)
@@ -106,7 +106,7 @@ class forecast:
         return self.value
 
     def by_city_daily(self, q, cnt):
-				# Daily forecast (maximum 14 days).
+	# Daily forecast (maximum 14 days).
         # RSVPs using city name, then return the JSON-array.
         self.page = urllib.request.urlopen('%s&q=%s&cnt=%s' % (self.request_uri_daily, q, cnt)).read().decode('utf-8')
         if self.mode == 'json': self.value = json.loads(self.page)
@@ -114,7 +114,7 @@ class forecast:
         return self.value
 
     def by_coordinats_daily(self, lat, lon, cnt):
-				# Daily forecast (maximum 14 days).
+	# Daily forecast (maximum 14 days).
         # RSVPs using geographic coordinats, then return the JSON-array.
         self.page = urllib.request.urlopen('%s&lon=%s&lat=%s&cnt=%s' % (self.request_uri_daily, lon, lat, cnt)).read().decode('utf-8')
         if self.mode == 'json': self.value = json.loads(self.page)
@@ -122,7 +122,7 @@ class forecast:
         return self.value
 
     def by_identifier_daily(self, id, cnt):
-				# Daily forecast (maximum 14 days).
+	# Daily forecast (maximum 14 days).
         # RSVPs using city ID, then return the JSON-array.
         self.page = urllib.request.urlopen('%s&id=%s&cnt=%s' % (self.request_uri_daily, id, cnt)).read().decode('utf-8')
         if self.mode == 'json': self.value = json.loads(self.page)
@@ -160,7 +160,7 @@ class find:
         self.request_uri = 'http://api.openweathermap.org/data/%s/find?mode=%s&lang=%s&units=%s' % (self.version, self.mode, self.lang, self.units)
 
     def by_city(self, q):
-				# Find location.
+	# Find location.
         # RSVPs using city name, then return the JSON-array.
         self.page = urllib.request.urlopen('%s&q=%s' % (self.request_uri, q)).read().decode('utf-8')
         if self.mode == 'json': self.value = json.loads(self.page)
@@ -168,7 +168,7 @@ class find:
         return self.value
 
     def by_coordinats(self, lat, lon):
-				# Find location.
+	# Find location.
         # RSVPs using geographic coordinats, then return the JSON-array.
         self.page = urllib.request.urlopen('%s&lon=%s&lat=%s' % (self.request_uri, lon, lat)).read().decode('utf-8')
         if self.mode == 'json': self.value = json.loads(self.page)
